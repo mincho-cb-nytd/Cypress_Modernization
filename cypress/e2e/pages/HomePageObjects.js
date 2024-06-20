@@ -1,4 +1,4 @@
-class LoginPageObjects {
+class HomePageObjects {
     elements = {
         nytdIcon: () =>  cy.get('[data-testid="NYTD_logo_left"]'),
         phoneNumber: () =>  cy.get('[data-testid="phone_number_link"]'),
@@ -37,4 +37,4 @@ verifyUsernameAndPasswordInputContainsSpecificValue() {
 }
 
 }
-export default LoginPageObjects;
+export default HomePageObjects;
