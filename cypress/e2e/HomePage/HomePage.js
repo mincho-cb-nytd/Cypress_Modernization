@@ -1,20 +1,10 @@
 import HomePageObjects from "../pages/HomePageObjects";
 const homePage = new HomePageObjects();
+import CommonPageObjects from "../pages/CommonPageObjects";
+const commonPage = new CommonPageObjects();
 describe("Login Page Validations", function () {
-      before(() => {
-    Cypress.session.clearAllSavedSessions()
-  })
-   beforeEach(function () {
-    cy.session("login", () => {
-      cy.visit("");
-    })
-  });
-  it("Verify NYTD logo navigates to acf page", function () {
-    cy.visit("");
-    homePage.clickOnNYTDIcon();
-  });
-
-    it("Verify user is able to select state user tab", function () {
+ 
+  it("Verify user is able to select state user tab", function () {
     cy.visit("");
     homePage.clickOnStateButton();
     homePage.elements.loginInstructionsMsg().contains('Please enter your Username and Password and select Login to begin using the NYTD portal')
@@ -25,20 +15,29 @@ describe("Login Page Validations", function () {
     homePage.elements.LoginBtn().contains('Login')
   });
 
-    it("Verify user is able to enter text for username and password", function () {
+  it("Verify user is able to enter text for username and password", function () {
     cy.visit("");
     homePage.clickOnStateButton();
     homePage.verifyUsernameAndPasswordInputContainsSpecificValue();
   });
 
-   it("Verify user is able to enter text for username and password", function () {
+  it("Verify forgot username navigates to forgot username page", function () {
     cy.visit("");
-    homePage.clickOnStateButton();
-    homePage.verifyUsernameAndPasswordInputContainsSpecificValue();
+    homePage.clickOnForgotUsername();
+    commonPage.verifyUrl("/ForgotUserName");
   });
 
-   it("Verify forgot username navigates to forgot username page", function () {
+  it("Verify forgot password navigates to forgot password page", function () {
     cy.visit("");
-    
+    homePage.clickOnForgotPassword();
+    commonPage.verifyUrl("/ForgotPassword");
+  });
+
+  it("Verify Signing in with incorrect username will display error validation message Incorrect username or password. Please try again", function () {
+    cy.visit("");
+    homePage.enterIncorrectUsernameAndPassword();
+    homePage.clickOnLoginBtn();
+    homePage.elements.incorrectUsernameAndPasswordErrorMsg().contains('Incorrect username or password. Please try again.')
+
   });
 });
