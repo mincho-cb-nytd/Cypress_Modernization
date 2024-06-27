@@ -1,6 +1,6 @@
 class CommonPageObjects {
   elements = {
-    url: () => cy.url(),
+    url: () => cy.url(), // This method will take the current url.
   }
 
   verifyUrl(url) {

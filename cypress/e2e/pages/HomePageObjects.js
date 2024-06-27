@@ -1,18 +1,18 @@
 class HomePageObjects {
     elements = {
-        nytdIcon: () => cy.get('[data-testid="NYTD_logo_left"]'),
-        phoneNumber: () => cy.get('[data-testid="phone_number_link"]'),
-        email: () => cy.get('[data-testid="email_link"]'),
-        stateUserBtn: () => cy.get('[data-testid="state_user_button"]'),
-        loginInstructionsMsg: () => cy.get('[data-testid="state_instructions"]'),
-        usernameText: () => cy.get('.styles_formGroup1___KxLX > [data-testid="label"]'),
-        usernameInput: () => cy.get('[data-testid="user_id_input"]'),
-        forgotUsernameText: () => cy.get('[data-testid="forgot_userName_link"]'),
-        passwordText: () => cy.get('.styles_formGroup2___aa7w > [data-testid="label"]'),
-        passwordInput: () => cy.get('[data-testid="password_input"]'),
-        forgotPasswordText: () => cy.get('[data-testid="forgot_password_link"]'),
-        LoginBtn: () => cy.get('[data-testid="state_user_login_button"]'),
-        incorrectUsernameAndPasswordErrorMsg: () => cy.get('#validation_message'),
+        nytdIcon: () => cy.get('[data-testid="NYTD_logo_left"]'), // NYTD Icon 
+        phoneNumberLink: () => cy.get('[data-testid="phone_number_link"]'), // Phone number link to deal NYTD Help desk.
+        emailLink: () => cy.get('[data-testid="email_link"]'), // Email link to sent email to Help desk .
+        stateUserBtn: () => cy.get('[data-testid="state_user_button"]'), // State user tab for log in with username and password.
+        loginInstructionsMsg: () => cy.get('[data-testid="state_instructions"]'), // Login instructions message text "Please enter your Username and Password and select Login to begin using the NYTD portal".
+        usernameText: () => cy.get('.styles_formGroup1___KxLX > [data-testid="label"]'), // Username* text above the username input.
+        usernameInput: () => cy.get('[data-testid="user_id_input"]'), // Username input, where to enter username.
+        forgotUsernameText: () => cy.get('[data-testid="forgot_userName_link"]'), // Forgot username link under the username input witch is navigating to forgot username page.
+        passwordText: () => cy.get('.styles_formGroup2___aa7w > [data-testid="label"]'), // Password* text above the password input.
+        passwordInput: () => cy.get('[data-testid="password_input"]'), // Password input where to enter password. 
+        forgotPasswordText: () => cy.get('[data-testid="forgot_password_link"]'), // Forgot password link under the password input witch is navigating to forgot password page.
+        LoginBtn: () => cy.get('[data-testid="state_user_login_button"]'), // Login button 
+        incorrectUsernameAndPasswordErrorMsg: () => cy.get('#validation_message'), // Error msg "Incorrect username or password. Please try again." when user enters incorrect username or password.
 
     }
 
