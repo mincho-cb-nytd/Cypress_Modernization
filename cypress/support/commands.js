@@ -9,7 +9,7 @@ Cypress.Commands.add('login', (username, password) => {
     cy.session([username, password], () => {
         cy.visit('')
         homePage.enterUsernameAndPassword(username, password);
-        homePage.clickOnLoginBtn();
+        homePage.clickOnStateUserLoginBtn();
         commonPage.verifyUrl('/MFA');
         mfaPage.elements.mfaHeader().should('have.text', 'Multi-Factor Authentication');
         mfaPage.elements.passcodeText().should('have.text', 'Passcode *');
