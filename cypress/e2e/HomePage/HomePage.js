@@ -12,7 +12,7 @@ describe("Login Page Validations", function () {
     homePage.elements.forgotUsernameText().contains('Forgot Username')
     homePage.elements.passwordText().contains('Password')
     homePage.elements.forgotPasswordText().contains('Forgot Password')
-    homePage.elements.StateUserLoginBtn().should('have.text','Login')
+    homePage.elements.stateUserLoginBtn().should('have.text','Login')
   });
   
   it("Verify user is able to select federal user tab", function () {
@@ -20,7 +20,7 @@ describe("Login Page Validations", function () {
     homePage.clickOnFederalUserTab();
     homePage.elements.federalUserLogInInstructionText().should('have.text','Insert your HSPD-12 access card into the smart card reader before you select login.');
     homePage.elements.pavCardImage().should('be.visible').and('have.prop', 'naturalWidth').then(cy.log).should('be.greaterThan',0);
-    homePage.elements.FederalUserLoginBtn().should('have.text','Login');
+    homePage.elements.federalUserLoginBtn().should('have.text','Login');
   });
 
   it("Verify user is able to enter text for username and password", function () {

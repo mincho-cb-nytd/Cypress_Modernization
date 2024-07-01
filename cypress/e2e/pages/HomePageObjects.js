@@ -12,8 +12,8 @@ class HomePageObjects {
         passwordText: () => cy.get('.styles_formGroup2___aa7w > [data-testid="label"]'), // Password* text above the password input.
         passwordInput: () => cy.get('[data-testid="password_input"]'), // Password input where to enter password. 
         forgotPasswordText: () => cy.get('[data-testid="forgot_password_link"]'), // Forgot password link under the password input witch is navigating to forgot password page.
-        StateUserLoginBtn: () => cy.get('[data-testid="state_user_login_button"]'), // Login button for State User
-        FederalUserLoginBtn: () => cy.get('[data-testid="federal_submit"]'), // Login button for FederalUser User
+        stateUserLoginBtn: () => cy.get('[data-testid="state_user_login_button"]'), // Login button for State User
+        federalUserLoginBtn: () => cy.get('[data-testid="federal_submit"]'), // Login button for FederalUser User
         incorrectUsernameAndPasswordErrorMsg: () => cy.get('#validation_message'), // Error msg "Incorrect username or password. Please try again." when user enters incorrect username or password.
         federalUserLogInInstructionText: () => cy.get('[data-testid="federal_instructions"]'), // Federal user instruction text witch display after clicking on federal user tab.
         pavCardImage: () => cy.get('[data-testid="federal_card_image"]'), // Card image witch display after clicking on federal user tab
